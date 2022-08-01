@@ -6,13 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".presentation.WeatherActivity">
 
+
     <TextView
-        android:id="@+id/hell_tv"
+        android:id="@+id/dt_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Время обновления: 00:00:00" />
+
+    <TextView
+        android:id="@+id/city_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/weather_icon_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_icon_image"
+        app:layout_constraintTop_toTopOf="@+id/weather_icon_image"
+        tools:text="Новосибирск" />
+
+    <ImageView
+        android:id="@+id/weather_icon_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:contentDescription="@string/weather_icon_description"
+        app:layout_constraintEnd_toStartOf="@id/city_name_tv"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/weather_icon_01d" />
+
+    <TextView
+        android:id="@+id/temp_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_name_tv"
+        tools:text="+20 \u2103" />
+
+    <TextView
+        android:id="@+id/temp_feels_like_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp_tv"
+        tools:text="По ощущению +22 \u2103" />
+
+    <TextView
+        android:id="@+id/wind_speed_text_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/wind_speed_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/pressure_text_tv"
+        app:layout_constraintStart_toStartOf="@+id/pressure_text_tv" />
+
+    <TextView
+        android:id="@+id/pressure_text_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/pressure_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/humidity_text_tv"
+        app:layout_constraintStart_toStartOf="@+id/humidity_text_tv" />
+
+    <TextView
+        android:id="@+id/humidity_text_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="110dp"
+        android:text="@string/humidity_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/dt_tv"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/wind_speed_and_deg_value_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/wind_speed_text_tv"
+        app:layout_constraintStart_toStartOf="@+id/pressure_value_tv"
+        app:layout_constraintTop_toTopOf="@+id/wind_speed_text_tv"
+        tools:text="3 СВ" />
+
+    <TextView
+        android:id="@+id/pressure_value_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pressure_text_tv"
+        app:layout_constraintStart_toStartOf="@+id/humidity_value_tv"
+        app:layout_constraintTop_toTopOf="@+id/pressure_text_tv"
+        tools:text="745" />
+
+    <TextView
+        android:id="@+id/humidity_value_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/humidity_text_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/humidity_text_tv"
+        tools:text="60" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
