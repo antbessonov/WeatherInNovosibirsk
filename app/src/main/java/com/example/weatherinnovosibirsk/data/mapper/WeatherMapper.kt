@@ -22,9 +22,14 @@ class WeatherMapper {
         name = dto.name,
         speed = dto.wind?.speed,
         deg = dto.wind?.deg,
+        id = dto.weather?.get(0)?.id,
+        main = dto.weather?.get(0)?.main,
+        description = dto.weather?.get(0)?.description,
         icon = dto.weather?.get(0)?.icon,
         temp = dto.main?.temp,
         feelsLike = dto.main?.feelsLike,
+        tempMin = dto.main?.tempMin,
+        tempMax = dto.main?.tempMax,
         pressure = dto.main?.pressure,
         humidity = dto.main?.humidity
     )
