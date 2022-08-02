@@ -31,8 +31,8 @@
 
     <ImageView
         android:id="@+id/weather_icon_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginTop="150dp"
         android:contentDescription="@string/weather_icon_description"
         app:layout_constraintEnd_toStartOf="@id/city_name_tv"

@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Weather in Novosibirsk</string>
     <string name="weather_icon_description">Weather icon</string>
+
     <string name="humidity_text">Влажность, %</string>
     <string name="pressure_text">Давление, мм рт.ст.</string>
     <string name="wind_speed_text">Скорость ветра, м/с</string>
+
+    <string name="dt_text">Время обновления данных: %s</string>
+    <string name="temp_text">+%s ℃</string>
+    <string name="temp_feels_like_text">По ощущению +%s ℃</string>
+    <string name="wind_speed_and_deg_value_text">%s %s</string>
 </resources>
