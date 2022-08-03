@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.example.weatherinnovosibirsk.data.database.AppDatabase
 import com.example.weatherinnovosibirsk.data.mapper.WeatherMapper
+import com.example.weatherinnovosibirsk.data.service.RefreshDataService
 import com.example.weatherinnovosibirsk.domain.WeatherInfo
 import com.example.weatherinnovosibirsk.domain.WeatherRepository
 
@@ -22,6 +23,6 @@ class WeatherRepositoryImpl(
     }
 
     override fun loadData() {
-        TODO()
+        application.startService(RefreshDataService.newIntent(application))
     }
 }
