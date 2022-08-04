@@ -1,11 +1,12 @@
 package com.example.weatherinnovosibirsk.data.repository
 
 import android.app.Application
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.example.weatherinnovosibirsk.data.database.AppDatabase
 import com.example.weatherinnovosibirsk.data.mapper.WeatherMapper
-import com.example.weatherinnovosibirsk.data.service.RefreshDataService
+import com.example.weatherinnovosibirsk.data.service.RefreshDataForegroundService
 import com.example.weatherinnovosibirsk.domain.WeatherInfo
 import com.example.weatherinnovosibirsk.domain.WeatherRepository
 
@@ -23,6 +24,9 @@ class WeatherRepositoryImpl(
     }
 
     override fun loadData() {
-        application.startService(RefreshDataService.newIntent(application))
+        ContextCompat.startForegroundService(
+            application,
+            RefreshDataForegroundService.newIntent(application)
+        )
     }
 }

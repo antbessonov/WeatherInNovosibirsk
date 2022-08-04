@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".data.service.RefreshDataService" />
+        <service android:name=".data.service.RefreshDataForegroundService" />
     </application>
 
 </manifest>
